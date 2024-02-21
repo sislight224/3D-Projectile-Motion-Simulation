@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour {
         _y0 = _y;
         _z0 = -distance;
 
-        camera.isOrthoGraphic = false;
+        GetComponent<Camera>().orthographic = false;
     }
     
     public void LateUpdate () {
@@ -43,11 +43,11 @@ public class CameraController : MonoBehaviour {
         distance -= Input.GetAxis("Fire1") * zoomSpd * 0.02f;
         distance += Input.GetAxis("Fire2") * zoomSpd * 0.02f;
 
-        if (!camera.isOrthoGraphic) {
+        if (!GetComponent<Camera>().orthographic) {
             distance = Mathf.Clamp(distance, distanceMinLimit, Mathf.Infinity);
         } else {
             distance = Mathf.Clamp(distance, distanceMinLimit + 40.0f, Mathf.Infinity);
-            camera.orthographicSize = Mathf.Clamp(distance - 140.0f, 10.0f, Mathf.Infinity);
+            GetComponent<Camera>().orthographicSize = Mathf.Clamp(distance - 140.0f, 10.0f, Mathf.Infinity);
         }
 
         transform.localPosition = new Vector3(_x, _y, -distance);
@@ -57,13 +57,13 @@ public class CameraController : MonoBehaviour {
         _x = _x0;
         _y = _y0;
         distance = -_z0;
-        if (camera.isOrthoGraphic) {
-            camera.orthographicSize = distance - 140.0f;
+        if (GetComponent<Camera>().orthographic) {
+            GetComponent<Camera>().orthographicSize = distance - 140.0f;
         }
     }
 
     public void SwitchIsOrtoGraphic() {
-        camera.isOrthoGraphic = !camera.isOrthoGraphic;
+        GetComponent<Camera>().orthographic = !GetComponent<Camera>().orthographic;
     }
 }
 

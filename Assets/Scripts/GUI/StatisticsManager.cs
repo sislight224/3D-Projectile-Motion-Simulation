@@ -35,15 +35,15 @@ public class StatisticsManager : MonoBehaviour {
             Debug.LogError("StatisticsManager: _data is null");
             return;
         }
-        timeInput.value = Utilities.Round(_data.time);
-        deltaTimeInput.value = Utilities.Round(_data.deltaTime);
-        xPosInput.value = Utilities.Round(_data.xPos);
-        yPosInput.value = Utilities.Round(_data.yPos);
-        angleInput.value = Utilities.Round(_data.velocityVector.angle);
-        velocityInput.value = Utilities.Round(_data.velocityVector.magnitude);
-        velocityXInput.value = Utilities.Round(_data.velocityVector.horizontal);
-        velocityYInput.value = Utilities.Round(_data.velocityVector.vertical);
-        maxYInput.value = Utilities.Round(_data.maxY);
-        maxYTimeInput.value = Utilities.Round(_data.maxYTime);
+        timeInput.text = Utilities.Round(_data.time);
+        deltaTimeInput.text = Utilities.Round(_data.deltaTime);
+        xPosInput.text = Utilities.Round(_data.xPos);
+        yPosInput.text = Utilities.Round(_data.yPos);
+        angleInput.text = Utilities.Round(_data.velocityVector.angle);
+        velocityInput.text = Utilities.Round(_data.velocityVector.magnitude);
+        velocityXInput.text = Utilities.Round(_data.velocityVector.horizontal);
+        velocityYInput.text = Utilities.Round(_data.velocityVector.vertical);
+        maxYInput.text = Utilities.Round(_data.maxY);
+        maxYTimeInput.text = Utilities.Round(_data.maxYTime);
     }
 }

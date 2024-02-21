@@ -16,9 +16,9 @@ public class BallBaseController : MonoBehaviour {
             float ballRadius = ballTransform.localScale.y / 2.0f;
 
             if (value <= ballRadius / 2.0f) {
-                renderer.enabled = false;
+                GetComponent<Renderer>().enabled = false;
             } else {
-                renderer.enabled = true;
+                GetComponent<Renderer>().enabled = true;
             }
 
             float baseHeight = value - ballRadius;

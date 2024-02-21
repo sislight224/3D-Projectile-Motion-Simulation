@@ -66,10 +66,10 @@ public class SettingsManager : MonoBehaviour {
 
     public void UpdateInputs() {
         ProjectileMotionData data = simulationController.initData;
-        velocityInput.value = Utilities.Round(data.velocityVector.magnitude);
-        angleInput.value = Utilities.Round(data.velocityVector.angle);
-        heightInput.value = Utilities.Round(data.yPos);
-        gravityAccInput.value = Utilities.Round(data.gravityAcceleration);
+        velocityInput.text = Utilities.Round(data.velocityVector.magnitude);
+        angleInput.text = Utilities.Round(data.velocityVector.angle);
+        heightInput.text = Utilities.Round(data.yPos);
+        gravityAccInput.text = Utilities.Round(data.gravityAcceleration);
 
         airDragToggle.onValueChanged.RemoveListener(simulationController.SwitchIsAirDrag);
         airDragToggle.onValueChanged.RemoveListener(SwitchAirDrag);
@@ -78,10 +78,10 @@ public class SettingsManager : MonoBehaviour {
         airDragToggle.onValueChanged.AddListener(SwitchAirDrag);
         //Debug.Log (airDragToggle.isOn);
 
-        massInput.value = Utilities.Round(data.mass);
-        airDensityInput.value = Utilities.Round(data.airDensity);
-        dragCoefficientInput.value = Utilities.Round(data.dragCoefficient);
-        areaInput.value = Utilities.Round(data.crossSectionalArea);
+        massInput.text = Utilities.Round(data.mass);
+        airDensityInput.text = Utilities.Round(data.airDensity);
+        dragCoefficientInput.text = Utilities.Round(data.dragCoefficient);
+        areaInput.text = Utilities.Round(data.crossSectionalArea);
     }
 
     public void EnableAllInputs() {
@@ -130,7 +130,7 @@ public class SettingsManager : MonoBehaviour {
             f = max;
         }
 
-        inputField.value = Utilities.Round(f);
+        inputField.text = Utilities.Round(f);
 
         return f;
     }

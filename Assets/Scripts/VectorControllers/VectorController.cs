@@ -26,11 +26,11 @@ public abstract class VectorController : MonoBehaviour {
 	public void Update () {
 		
 		if (!_isShowed || Utilities.isZero(simulationController.currentData.velocityVector.magnitude)) {
-			renderer.enabled = false;
-			cone.renderer.enabled = false;
+			GetComponent<Renderer>().enabled = false;
+			cone.GetComponent<Renderer>().enabled = false;
 		} else {
-			renderer.enabled = true;
-			cone.renderer.enabled = true;
+			GetComponent<Renderer>().enabled = true;
+			cone.GetComponent<Renderer>().enabled = true;
 		}
 
 		transformVector();
